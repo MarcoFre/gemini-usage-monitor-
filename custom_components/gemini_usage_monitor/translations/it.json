@@ -1,0 +1,34 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Gemini Usage Monitor",
+        "description": "Configura i prezzi di default usati per stimare il costo delle API Gemini.",
+        "data": {
+          "name": "Nome",
+          "input_cost_per_1m": "Costo input per 1M token (USD)",
+          "output_cost_per_1m": "Costo output per 1M token (USD)",
+          "cached_input_cost_per_1m": "Costo input cached per 1M token (USD)",
+          "cache_storage_cost_per_1m_per_hour": "Costo storage cache per 1M token/ora (USD)",
+          "grounding_cost_per_1000_requests": "Costo grounding per 1000 richieste (USD)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni Gemini Usage Monitor",
+        "description": "Modifica i prezzi usati per la stima del costo.",
+        "data": {
+          "name": "Nome",
+          "input_cost_per_1m": "Costo input per 1M token (USD)",
+          "output_cost_per_1m": "Costo output per 1M token (USD)",
+          "cached_input_cost_per_1m": "Costo input cached per 1M token (USD)",
+          "cache_storage_cost_per_1m_per_hour": "Costo storage cache per 1M token/ora (USD)",
+          "grounding_cost_per_1000_requests": "Costo grounding per 1000 richieste (USD)"
+        }
+      }
+    }
+  }
+}

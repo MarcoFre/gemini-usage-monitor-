@@ -1,0 +1,80 @@
+record_usage:
+  name: Record usage
+  description: Record one Gemini API call usage payload and update monitor sensors.
+  fields:
+    entry_id:
+      name: Entry ID
+      description: Required only if multiple Gemini Usage Monitor entries exist.
+      example: abc123def456
+    model:
+      name: Model
+      description: Gemini model used for the request.
+      example: gemini-2.5-flash
+    source:
+      name: Source
+      description: Optional logical source of the call.
+      example: hackmyhome_agent
+    request_count:
+      name: Request count
+      description: How many requests this payload represents.
+      example: 1
+    grounded_requests:
+      name: Grounded requests
+      description: Number of grounded prompts to price separately.
+      example: 0
+    cache_storage_hours:
+      name: Cache storage hours
+      description: Hours to charge for cache storage when explicit caching is used.
+      example: 0
+    usage_metadata:
+      name: Usage metadata
+      description: Gemini usage_metadata object in snake_case or camelCase.
+      example:
+        prompt_token_count: 1387
+        candidates_token_count: 421
+        cached_content_token_count: 200
+        thoughts_token_count: 75
+        total_token_count: 1883
+    response:
+      name: Response
+      description: Full Gemini response object. The integration will try to extract usage_metadata automatically.
+      example:
+        usage_metadata:
+          prompt_token_count: 1387
+          candidates_token_count: 421
+          cached_content_token_count: 200
+          thoughts_token_count: 75
+          total_token_count: 1883
+    prompt_tokens:
+      name: Prompt tokens
+      description: Flat override for prompt tokens.
+      example: 1387
+    output_tokens:
+      name: Output tokens
+      description: Flat override for output tokens.
+      example: 421
+    cached_tokens:
+      name: Cached tokens
+      description: Flat override for cached tokens.
+      example: 200
+    thoughts_tokens:
+      name: Thoughts tokens
+      description: Flat override for thoughts tokens.
+      example: 75
+    total_tokens:
+      name: Total tokens
+      description: Flat override for total tokens.
+      example: 1883
+    estimated_cost_usd:
+      name: Estimated cost USD
+      description: Optional direct cost override, useful for audio or externally computed billing.
+      example: 0.004231
+
+reset_totals:
+  name: Reset totals
+  description: Reset the current daily counters to zero.
+  fields:
+    entry_id:
+      name: Entry ID
+      description: Required only if multiple Gemini Usage Monitor entries exist.
+      example: abc123def456
